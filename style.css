@@ -511,7 +511,8 @@ main {
 /* Project Images */
 .project-image-container {
     width: 100%;
-    height: 180px;
+    height: 240px;
+    /* Increased from 180px to show more image */
     overflow: hidden;
     position: relative;
     border-bottom: 1px solid var(--glass-border);
@@ -521,6 +522,8 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center;
+    /* Focus on the top of the interface/code */
     transition: transform 0.5s ease;
 }
 
