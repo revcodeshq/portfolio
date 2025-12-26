@@ -52,6 +52,9 @@
 </head>
 
 <body>
+    <!-- Particles Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
     <div class="background-effects">
         <div class="glow-orb orb-1"></div>
         <div class="glow-orb orb-2"></div>
@@ -76,9 +79,16 @@
                 <div class="hero-badge">
                     <span class="status-dot"></span> Available for work
                 </div>
-                <h1 class="glitch-text" data-text="RevCodesHQ">RevCodesHQ</h1>
-                <p class="hero-bio">Self-taught developer. <br><span class="highlight">Automating. Experimenting.
-                        Learning.</span></p>
+                <h1 class="glitch-text">
+                    Hi, I'm Rev.<br>
+                    <span id="typewriter-text"></span><span class="cursor">|</span>
+                </h1>
+                <div class="hero-bio">
+                    Building <span class="highlight">authentic</span> digital experiences.
+                    Specializing in <span class="highlight">Discord Bots</span>,
+                    <span class="highlight">Backend Systems</span>, and
+                    <span class="highlight">Web Development</span>.
+                </div>
 
                 <div class="social-links">
                     <a href="https://github.com/revcodeshq" target="_blank" aria-label="GitHub"><i
@@ -89,19 +99,8 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="code-card glass-card float-animation">
-                    <div class="card-header">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
-                    </div>
-                    <div class="code-content">
-                        <pre><code><span class="keyword">const</span> <span class="var">developer</span> = {
-  <span class="key">name</span>: <span class="string">'Rev'</span>,
-  <span class="key">stack</span>: [<span class="string">'JS'</span>, <span class="string">'Node'</span>, <span class="string">'React'</span>],
-  <span class="key">passion</span>: <span class="string">'Automation'</span>
-};</code></pre>
-                    </div>
+                <div class="avatar-container glass-card float-animation">
+                    <img src="https://avatars.githubusercontent.com/u/218414392?v=4" alt="Rev" class="hero-avatar">
                 </div>
             </div>
         </section>
@@ -169,18 +168,18 @@
             <div class="projects-grid">
                 <!-- GuildForge Featured Card -->
                 <article class="glass-card project-card featured-project">
-                    <div class="project-content">
-                        <div class="project-top">
-                            <div class="project-icon-group">
-                                <i class="fas fa-server folder-icon highlight-icon"></i>
-                                <span class="live-badge">Live Product</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://tryguildforge.com" target="_blank" aria-label="Visit Website"><i
-                                        class="fas fa-external-link-alt"></i></a>
-                            </div>
+                    <div class="project-image-container">
+                        <img src="images/guildforge_thumb.png" alt="GuildForge Dashboard" class="project-thumb">
+                        <div class="project-overlay">
+                            <a href="https://tryguildforge.com" target="_blank" class="btn-icon"
+                                aria-label="Visit Website"><i class="fas fa-external-link-alt"></i></a>
                         </div>
-                        <h3>GuildForge</h3>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header-row">
+                            <h3>GuildForge</h3>
+                            <span class="live-badge">Live Product</span>
+                        </div>
                         <p>Build professional Discord communities in seconds using AI-powered automation. Instant
                             deployment of roles, channels, and permissions.</p>
                         <ul class="tech-list">
@@ -192,15 +191,17 @@
                 </article>
 
                 <article class="glass-card project-card">
-                    <div class="project-content">
-                        <div class="project-top">
-                            <i class="far fa-folder-open folder-icon"></i>
-                            <div class="project-links">
-                                <a href="https://github.com/revcodeshq/BBGbot" target="_blank"><i
-                                        class="fab fa-github"></i></a>
-                            </div>
+                    <div class="project-image-container">
+                        <img src="images/bbgbot_thumb.png?v=3" alt="BBGbot Interface" class="project-thumb">
+                        <div class="project-overlay">
+                            <a href="https://github.com/revcodeshq/BBGbot" target="_blank" class="btn-icon"
+                                aria-label="View Code"><i class="fab fa-github"></i></a>
                         </div>
-                        <h3>BBGbot</h3>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header-row">
+                            <h3>BBGbot</h3>
+                        </div>
                         <p>Advanced Discord bot for the BBG Alliance with Whiteout Survival integration, automated
                             scheduling, and AI tools.</p>
                         <ul class="tech-list">
@@ -212,15 +213,17 @@
                 </article>
 
                 <article class="glass-card project-card">
-                    <div class="project-content">
-                        <div class="project-top">
-                            <i class="far fa-folder-open folder-icon"></i>
-                            <div class="project-links">
-                                <a href="https://github.com/revcodeshq/Modulus" target="_blank"><i
-                                        class="fab fa-github"></i></a>
-                            </div>
+                    <div class="project-image-container">
+                        <img src="images/modulus_thumb.png?v=3" alt="Modulus Structure" class="project-thumb">
+                        <div class="project-overlay">
+                            <a href="https://github.com/revcodeshq/Modulus" target="_blank" class="btn-icon"
+                                aria-label="View Code"><i class="fab fa-github"></i></a>
                         </div>
-                        <h3>Modulus</h3>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header-row">
+                            <h3>Modulus</h3>
+                        </div>
                         <p>Modular, production-ready Discord server management bot. Features robust moderation and
                             Mongoose integration.</p>
                         <ul class="tech-list">
@@ -232,15 +235,17 @@
                 </article>
 
                 <article class="glass-card project-card">
-                    <div class="project-content">
-                        <div class="project-top">
-                            <i class="far fa-folder-open folder-icon"></i>
-                            <div class="project-links">
-                                <a href="https://github.com/revcodeshq/ServerSense" target="_blank"><i
-                                        class="fab fa-github"></i></a>
-                            </div>
+                    <div class="project-image-container">
+                        <img src="images/serversense_thumb.png?v=3" alt="ServerSense Analytics" class="project-thumb">
+                        <div class="project-overlay">
+                            <a href="https://github.com/revcodeshq/ServerSense" target="_blank" class="btn-icon"
+                                aria-label="View Code"><i class="fab fa-github"></i></a>
                         </div>
-                        <h3>ServerSense</h3>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header-row">
+                            <h3>ServerSense</h3>
+                        </div>
                         <p>Server management utility focused on analytics and insight generation for community growth.
                         </p>
                         <ul class="tech-list">
@@ -269,7 +274,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
 </body>
 
 </html>
