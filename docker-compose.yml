@@ -1,9 +1,13 @@
-version: '3.8'
-
 services:
   portfolio:
-    build: .
-    ports:
-      - "3000:3000"
-    restart: always
     container_name: revcodes-portfolio
+    build: .
+    restart: unless-stopped
+    expose:
+      - "3000"
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
