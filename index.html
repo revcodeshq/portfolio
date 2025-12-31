@@ -65,6 +65,11 @@
     <!-- Navigation -->
     <nav class="glass-nav">
         <div class="logo">REV<span class="dot">.</span></div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -97,6 +102,10 @@
                     <a href="https://discord.gg/YTXxZfYTCa" target="_blank" aria-label="Discord"><i
                             class="fab fa-discord"></i></a>
                     <a href="mailto:revhq@proton.me" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+
+                <div class="hero-cta" style="margin-top: 2rem;">
+                    <a href="resume.pdf" class="btn-glow" target="_blank"><i class="fas fa-file-alt"></i> Resume</a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -262,8 +271,19 @@
         <section id="contact" class="section-pad contact-section">
             <div class="glass-card contact-card">
                 <h2>Let's Connect</h2>
-                <p>Always open to discussing new projects, collaborations, or just tech.</p>
-                <a href="mailto:revhq@proton.me" class="btn-primary">Say Hello</a>
+                <p>Have a project in mind? Send me a message.</p>
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="5" placeholder="Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
             </div>
         </section>
     </main>

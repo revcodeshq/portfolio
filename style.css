@@ -155,6 +155,49 @@ nav {
     box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
 }
 
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: rgba(0, 240, 255, 0.05);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-primary);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
 /* Layout */
 main {
     max-width: 1200px;
@@ -699,13 +742,59 @@ footer {
         font-size: 3rem;
     }
 
-    .nav-links {
-        display: none;
-        /* For simplicity in this v1 */
+    .logo {
+        margin: 0;
+        /* Reset margin */
     }
 
-    .logo {
-        margin: 0 auto;
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: flex;
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        background: rgba(5, 5, 5, 0.95);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        /* Full width for better mobile experience */
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+        z-index: 99;
+        /* Behind hamburger */
+    }
+
+    .nav-links.nav-active {
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        opacity: 0;
+        /* Animated in JS */
+        margin: 1.5rem 0;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+
+    /* Hamburger Animation */
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .toggle .line2 {
+        opacity: 0;
+    }
+
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 }
 
