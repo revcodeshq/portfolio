@@ -82,18 +82,37 @@
         <!-- Hero Section -->
         <section id="hero" class="hero-section">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="status-dot"></span> Available for work
+                <div class="hero-badge" id="discord-badge">
+                    <span class="status-dot"></span> <span id="discord-status-text">Loading Status...</span>
                 </div>
                 <h1 class="glitch-text">
                     Hi, I'm Rev.<br>
                     <span id="typewriter-text"></span><span class="cursor">|</span>
                 </h1>
-                <div class="hero-bio">
-                    Building <span class="highlight">authentic</span> digital experiences.
-                    Specializing in <span class="highlight">Discord Bots</span>,
-                    <span class="highlight">Backend Systems</span>, and
-                    <span class="highlight">Web Development</span>.
+                <div class="terminal-wrapper gl-card">
+                    <div class="terminal-header">
+                        <div class="term-dots">
+                            <span class="term-dot red"></span>
+                            <span class="term-dot yellow"></span>
+                            <span class="term-dot green"></span>
+                        </div>
+                        <span class="term-title">rev@portfolio:~</span>
+                    </div>
+                    <div class="terminal-window" id="terminal-window">
+                        <div id="terminal-output">
+                            <div class="term-line">Initializing RevOS v2.0...</div>
+                            <div class="term-line">Loaded modules: <span class="term-highlight">Discord.js</span>, <span
+                                    class="term-highlight">Node.js</span>, <span class="term-highlight">MongoDB</span>
+                            </div>
+                            <div class="term-line">Type <span class="term-cmd">'help'</span> for a list of commands.
+                            </div>
+                            <br>
+                        </div>
+                        <div class="terminal-input-area">
+                            <span class="term-prompt">rev@portfolio:~$</span>
+                            <input type="text" id="terminal-input" autocomplete="off" spellcheck="false">
+                        </div>
+                    </div>
                 </div>
 
                 <div class="social-links">
@@ -104,13 +123,38 @@
                     <a href="mailto:revhq@proton.me" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
 
-                <div class="hero-cta" style="margin-top: 2rem;">
-                    <a href="resume.pdf" class="btn-glow" target="_blank"><i class="fas fa-file-alt"></i> Resume</a>
-                </div>
+
             </div>
             <div class="hero-visual">
                 <div class="avatar-container glass-card float-animation">
                     <img src="https://avatars.githubusercontent.com/u/218414392?v=4" alt="Rev" class="hero-avatar">
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="stats" class="stats-section">
+            <div class="stats-container">
+                <div class="stat-item glass-card">
+                    <i class="fas fa-server stat-icon"></i>
+                    <div class="stat-info">
+                        <h3 class="stat-number" data-target="3">0</h3>
+                        <p>Servers Managed</p>
+                    </div>
+                </div>
+                <div class="stat-item glass-card">
+                    <i class="fas fa-users stat-icon"></i>
+                    <div class="stat-info">
+                        <h3 class="stat-number" data-target="300">0</h3>
+                        <p>Users Served</p>
+                    </div>
+                </div>
+                <div class="stat-item glass-card">
+                    <i class="fas fa-code-branch stat-icon"></i>
+                    <div class="stat-info">
+                        <h3 class="stat-number" data-target="99">0</h3>
+                        <p>% Uptime</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -212,8 +256,8 @@
                         <div class="project-header-row">
                             <h3>BBGbot</h3>
                         </div>
-                        <p>Advanced Discord bot for the BBG Alliance with Whiteout Survival integration, automated
-                            scheduling, and AI tools.</p>
+                        <p>Advanced Discord bot for the BBG Alliance featuring whiteout survival game integration,
+                            automated scheduling, giveaways, AI-powered tools, and robust configuration.</p>
                         <ul class="tech-list">
                             <li>JavaScript</li>
                             <li>Node.js</li>
@@ -234,8 +278,8 @@
                         <div class="project-header-row">
                             <h3>Modulus</h3>
                         </div>
-                        <p>Modular, production-ready Discord server management bot. Features robust moderation and
-                            Mongoose integration.</p>
+                        <p>Modulus is a modular, production-ready Discord server management bot built with Node.js,
+                            Discord.js v14, and MongoDB (Mongoose).</p>
                         <ul class="tech-list">
                             <li>Node.js</li>
                             <li>Mongoose</li>
@@ -267,23 +311,32 @@
             </div>
         </section>
 
+        <!-- Testimonials/Trust Section -->
+        <section id="trust" class="section-pad">
+            <h2 class="section-title">Trusted By <span class="accent">//</span></h2>
+            <div class="trust-grid">
+                <div class="trust-item glass-card">
+                    <i class="fab fa-discord fa-3x"></i>
+                    <p>FlyingTheNest</p>
+                </div>
+                <div class="trust-item glass-card">
+                    <i class="fab fa-discord fa-3x"></i>
+                    <p>ExploreLonger</p>
+                </div>
+            </div>
+        </section>
+
+
+
         <!-- Contact Section -->
         <section id="contact" class="section-pad contact-section">
             <div class="glass-card contact-card">
                 <h2>Let's Connect</h2>
-                <p>Have a project in mind? Send me a message.</p>
-                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" rows="5" placeholder="Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary">Send Message</button>
-                </form>
+                <p>Have a project in mind? Send me a message directly.</p>
+                <div class="contact-actions" style="margin-top: 2rem;">
+                    <a href="mailto:revhq@proton.me" class="btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Send
+                        Email</a>
+                </div>
             </div>
         </section>
     </main>
@@ -295,7 +348,30 @@
         </div>
     </footer>
 
-    <script src="script.js?v=2"></script>
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="Project Preview">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modal-title">Project Title</h2>
+                    <div class="modal-tags" id="modal-tags">
+                        <!-- Tags injected here -->
+                    </div>
+                    <p id="modal-desc">Project description goes here...</p>
+                    <div class="modal-links">
+                        <a href="#" id="modal-live" class="btn-primary" target="_blank">Live Demo</a>
+                        <a href="#" id="modal-code" class="btn-glow" target="_blank">View Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=3"></script>
 </body>
 
 </html>
