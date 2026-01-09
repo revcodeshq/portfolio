@@ -1,0 +1,133 @@
+.section {
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+
+.textColumn {
+    flex: 1;
+    max-width: 600px;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    background: linear-gradient(to right, #0885ff, #54d6ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bio {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.skillCard {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.skillCard:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.skillName {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ededed;
+}
+
+.imageColumn {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 500px;
+}
+
+.angelWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.angelImage {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    object-fit: contain;
+    /* Use the image itself as a mask: White = Opaque, Black = Transparent */
+    -webkit-mask-image: url('/angel-white.png');
+    mask-image: url('/angel-white.png');
+    -webkit-mask-mode: luminance;
+    mask-mode: luminance;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    /* Ensure the image content is visible (can boost brightness/contrast if needed) */
+    opacity: 1;
+    filter: brightness(1.2);
+    /* Boost brightness so mask is cleaner */
+}
+
+@media (max-width: 1024px) {
+    .aboutContent {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .imageColumn {
+        min-height: 400px;
+    }
+}
+
+.voidContainer {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    background: radial-gradient(circle at center, rgba(82, 4, 113, 0.1), transparent 70%);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(84, 214, 255, 0.05);
+}

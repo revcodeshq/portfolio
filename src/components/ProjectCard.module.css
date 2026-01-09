@@ -1,0 +1,119 @@
+.card {
+    position: relative;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--glass-highlight);
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.description {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ededed;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.links {
+    display: flex;
+    gap: 1rem;
+}
+
+.link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.link:hover {
+    opacity: 1;
+    border-bottom-color: #fff;
+}
+
+/* Glow Effects */
+.glow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.card:hover .glow {
+    opacity: 1;
+}
+
+/* Color Variants (Subtle border/glow hints) */
+.blue {
+    box-shadow: 0 4px 30px rgba(0, 113, 255, 0.05);
+}
+
+.purple {
+    box-shadow: 0 4px 30px rgba(133, 4, 184, 0.05);
+}
+
+.green {
+    box-shadow: 0 4px 30px rgba(39, 201, 63, 0.05);
+}
+
+.blue:hover {
+    box-shadow: 0 10px 40px rgba(0, 113, 255, 0.15);
+}
+
+.purple:hover {
+    box-shadow: 0 10px 40px rgba(133, 4, 184, 0.15);
+}
+
+.green:hover {
+    box-shadow: 0 10px 40px rgba(39, 201, 63, 0.15);
+}

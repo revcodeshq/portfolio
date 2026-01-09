@@ -1,0 +1,51 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-mono);
+}
+
+.terminal {
+    font-size: 1.5rem;
+    color: #27c93f;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.prefix {
+    color: #54d6ff;
+}
+
+.cursor {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.loader {
+    height: 2px;
+    background: linear-gradient(90deg, #0885ff, #8504b8, #54d6ff);
+    width: 0;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(8, 133, 255, 0.5);
+}

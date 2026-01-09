@@ -1,0 +1,141 @@
+.terminal {
+    background: rgba(10, 10, 10, 0.85);
+    /* Darker background for legibility */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 800px;
+    /* Constrain width */
+    margin: 2rem auto;
+    font-family: var(--font-mono);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+.title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+    pointer-events: none;
+}
+
+.body {
+    padding: 1rem;
+    height: 400px;
+    /* Fixed height for scroll */
+    overflow-y: auto;
+    cursor: text;
+}
+
+/* Custom Scrollbar for Terminal */
+.body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.body::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.entry {
+    margin-bottom: 0.5rem;
+}
+
+.commandLine,
+.currentLine {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.prompt {
+    color: #27c93f;
+    /* Green prompt */
+    font-weight: bold;
+}
+
+.path {
+    color: #54d6ff;
+    /* Blue path */
+    font-weight: bold;
+}
+
+.command {
+    color: #ededed;
+}
+
+.response {
+    margin-left: 0px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.input {
+    background: transparent;
+    border: none;
+    color: #ededed;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    flex: 1;
+    outline: none;
+}
+
+.highlight {
+    color: #ffbd2e;
+    font-weight: bold;
+}
+
+.gridResponse {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
